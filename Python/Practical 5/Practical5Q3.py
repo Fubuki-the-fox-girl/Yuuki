@@ -8,18 +8,12 @@
 #deposited RM5,000 into a bank with yearly interest of 2%. The program should give the
 #students a yearly report on his account.
 
-
-#       5000 ( 1.02 ) ** ( target - 1 ) > 10000
-#            ( 1.02 ) ** ( target - 1 ) > 2000
-#        ( target - 1 )math.log( 1.02 ) > math.log(2000)
-#                        ( target - 1 ) > (math.log(2000))/(math.log( 1.02 ))
-#                                target > 383.83303113564267 + 1
-#                                target = 385
-
 import math
-initialBalance = 5000
-interest = 0.02
+initialBalance = float(input("Please enter the deposited amount : "))
+interest = 1.02
+
+years = float(math.log(10000/initialBalance)/math.log(interest))
 
 print(f"Initial balance is RM{initialBalance}")
 print(f"The interest of the bank is {interest}")
-print("The student will get RM10,000 after",)
+print("The student will get RM10,000 after %.2f years"%years)
