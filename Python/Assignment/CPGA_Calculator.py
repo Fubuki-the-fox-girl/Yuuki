@@ -1,9 +1,9 @@
 #Name      : CPGA_Calculator.py 
 #Purpose   : IF EVERYONE HAPPY , THEN I HAPPY
 #Modules   : json , os , sys, platform , webbrowser, getpass, distutils.util , strtobool
-#Date      : 10th July 2021 - 1st August 2021 (version 1.0) , 16th - 17th August 2021 for adding some new features (version 1.7)
+#Date      : 10th July 2021 - 1st August 2021 (version 1.0) , 16th - 17th August 2021 for adding some new features
 #Programmer: Gawr Gura
-#Version   : 1 . 7
+#Version   : 1 . 8
 
 """[Modules]
 """
