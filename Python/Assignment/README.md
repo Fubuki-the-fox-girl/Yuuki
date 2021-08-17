@@ -1,6 +1,6 @@
 # CPGA Calculator for UTAR students
 
-![Gura](https://preview.redd.it/n5o42tq8yhm61.gif?width=960&format=mp4&s=327fec0c8b8bf7531a923b7322ed27d0239f7247)  
+![Gura](https://c.tenor.com/ujeirHxbYTEAAAAd/gawr-gawr-gura.gif)  
 
 o((>ω< ))o  Version 1 . 5  
 Now able to save data into json file  
