@@ -19,12 +19,15 @@
 #       *****
 
 lines = int(input("How many lines you want ? : "))
-
+times = 0
+print("Lines :", lines)
 loop = True
 while loop:
-    times = ++ 1
+    times = times ++ 1
     if times != lines:
-        print("Lines :", lines)
+        for i in range(0, 2, 1):
+            for x in range(0, i+1, 1):
+                print("*")
         
 
     else:

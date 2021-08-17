@@ -1,7 +1,7 @@
 #Name      : CPGA_Calculator.py 
 #Purpose   : IF EVERYONE HAPPY , THEN I HAPPY
 #Modules   : json , os , sys, platform , webbrowser, getpass, distutils.util , strtobool
-#Date      : 10th July 2021 - 1st August 2021 (version 1.0) , 16th - 17th August 2021 for adding some new features (version 1.5)
+#Date      : 10th July 2021 - 1st August 2021 (version 1.0) , 16th - 17th August 2021 for adding some new features (version 1.5, version 1.6)
 #Programmer: Gawr Gura
 
 """[Modules]
@@ -184,96 +184,259 @@ valid_course_code = [""]
 subject = ["",""]
 
 def validation_course_code():
-    if course_code[0] in ("FHSB1224","FHSB1214","FHHM1022","FHEL1012","FHMM1014","FHMM1024","FHMM1034","FHSC1124","FHSC1114","FHSC1214","FHSC1134","FHSC1224","FHSC1234","FHSP1014","FHSP1024","FHSC1014","FHSC1024","FHSC1034","FHCT1022","FHCT1012","FHCT1014","FHCT1024","FHBM1114","FHEL1024","FHHM1012","FHEL1134","FHEL1114","FHBM1124","FHBM1214","FHBM1224","FHMM1314","FHBM1024","FHBM1014","FHHM1134","FHMM1214","XXXXXXXX","FHHM1124","FHAD1024","FHAD1014","FHAD1034"):
-        valid_course_code[0] = True
-        if course_code[0] == "FHSB1224":
-            subject[0] = "Biology II"
-        elif course_code[0] == "FHSB1214":
-            subject[0] = "Biology I"
-        elif course_code[0] == "FHHM1022":
-            subject[0] = "Effective Communication Skills"
-        elif course_code[0] == "FHEL1012":
-            subject[0] = "English for Academic Study"
-        elif course_code[0] == "FHMM1014":
-            subject[0] = "Mathematics I"
-        elif course_code[0] == "FHMM1024":
-            subject[0] = "Mathematics II"
-        elif course_code[0] == "FHMM1034":
-            subject[0] = "Mathematics III"
-        elif course_code[0] == "FHSC1124":
-            subject[0] = "Organic Chemistry"
-        elif course_code[0] == "FHSC1114":
-            subject[0] = "Physical Chemistry"
-        elif course_code[0] == "FHSC1214":
-            subject[0] = "Fundamentals of Cell Biology"
-        elif course_code[0] == "FHSC1134":
-            subject[0] = "Inorganic Chemistry"
-        elif course_code[0] == "FHSC1224":
-            subject[0] = "Introduction to Physiological Systems"
-        elif course_code[0] == "FHSC1234":
-            subject[0] = "Modern Biology"
-        elif course_code[0] == "FHSP1014":
-            subject[0] = "Physics I"
-        elif course_code[0] == "FHSP1024":
-            subject[0] = "Physics II"
-        elif course_code[0] == "FHSC1014":
-            subject[0] = "Mechanics"
-        elif course_code[0] == "FHSC1024":
-            subject[0] = "Thermodynamics and Electromagnetism"
-        elif course_code[0] == "FHSC1034":
-            subject[0] = "Waves and Modern Physics"
-        elif course_code[0] == "FHCT1022":
-            subject[0] = "Programming Concepts"
-        elif course_code[0] == "FHCT1012":
-            subject[0] = "Computing Technology"
-        elif course_code[0] == "FHCT1014":
-            subject[0] = "Introduction to Data Analytics"
-        elif course_code[0] == "FHCT1024":
-            subject[0] = "Programming Concepts and Design"
-        elif course_code[0] == "FHBM1114":
-            subject[0] = "Management"
-        elif course_code[0] == "FHEL1024":
-            subject[0] = "Academic English"
-        elif course_code[0] == "FHHM1012":
-            subject[0] = "Critical Thinking"
-        elif course_code[0] == "FHEL1134":
-            subject[0] = "English for Business Communication"
-        elif course_code[0] == "FHEL1114":
-            subject[0] = "English Language Proficiency"
-        elif course_code[0] == "FHBM1124":
-            subject[0] = "Marketing"
-        elif course_code[0] == "FHBM1214":
-            subject[0] = "Financial Accounting"
-        elif course_code[0] == "FHBM1224":
-            subject[0] = "Financial Management"
-        elif course_code[0] == "FHMM1314":
-            subject[0] = "Mathematics for Business I"
-        elif course_code[0] == "FHMM1324":
-            subject[0] = "Mathematics for Business II"
-        elif course_code[0] == "FHBM1024":
-            subject[0] = "Microeconomics and Macroeconomics"
-        elif course_code[0] == "FHBM1014":
-            subject[0] = "Principles of Economics"
-        elif course_code[0] == "FHHM1134":
-            subject[0] = "Introduction to Social Psychology"
-        elif course_code[0] == "FHMM1214":
-            subject[0] = "Mathematics for Social Science"
-        #elif course_code[0] == "XXXXXXXX":
-            #subject[0] = "Introduction to Chinese Literature"
-        #elif course_code[0] == "XXXXXXXX":
-            #subject[0] = "Introduction to Chinese Writing"
-        #elif course_code[0] == "XXXXXXXX":
-            #subject[0] = "Selected Texts of Modern Chinese Literature"
-        elif course_code[0] == "FHHM1124":
-            subject[0] = "Socialization as a Process"
-        elif course_code[0] == "FHAD1024":
-            subject[0] = "Analytical Drawing"
-        elif course_code[0] == "FHAD1014":
-            subject[0] = "Design Fundamentals"
-        elif course_code[0] == "FHAD1034":
-            subject[0] = "Figure Drawing"
-    else:
-        valid_course_code[0] = False
+
+    # Science Stream
+    if student_stream[0] == "1":
+        if course_code[0] in ("FHHM1022","FHEL1012","FHMM1014","FHMM1024","FHMM1034","FHSC1124","FHSC1114","FHSC1214","FHSC1134","FHSC1224","FHSC1234","FHSP1014","FHSP1024","FHCT1022"):
+            valid_course_code[0] = True
+            if course_code[0] == "FHHM1022":
+                subject[0] = "Effective Communication Skills"
+            elif course_code[0] == "FHEL1012":
+                subject[0] = "English for Academic Study"
+            elif course_code[0] == "FHMM1014":
+                subject[0] = "Mathematics I"
+            elif course_code[0] == "FHMM1024":
+                subject[0] = "Mathematics II"
+            elif course_code[0] == "FHMM1034":
+                subject[0] = "Mathematics III"
+            elif course_code[0] == "FHSC1124":
+                subject[0] = "Organic Chemistry"
+            elif course_code[0] == "FHSC1114":
+                subject[0] = "Physical Chemistry"
+            elif course_code[0] == "FHSC1214":
+                subject[0] = "Fundamentals of Cell Biology"
+            elif course_code[0] == "FHSC1134":
+                subject[0] = "Inorganic Chemistry"
+            elif course_code[0] == "FHSC1224":
+                subject[0] = "Introduction to Physiological Systems"
+            elif course_code[0] == "FHSC1234":
+                subject[0] = "Modern Biology"
+            elif course_code[0] == "FHSP1014":
+                subject[0] = "Physics I"
+            elif course_code[0] == "FHSP1024":
+                subject[0] = "Physics II"
+            elif course_code[0] == "FHCT1022":
+                subject[0] = "Programming Concepts"
+        
+        else:
+            valid_course_code[0] = False
+
+    elif student_stream[0] == "2":
+        if course_code[0] in ("FHHM1022","FHEL1012","FHMM1014","FHMM1024","FHMM1034","FHSC1124","FHSC1114","FHSC1014","FHSC1024","FHSC1034","FHSC1134","FHCT1022","FHSB1214","FHSB1224","FHSB1214"):
+            valid_course_code[0] = True
+            if course_code[0] == "FHHM1022":
+                subject[0] = "Effective Communication Skills"
+            elif course_code[0] == "FHEL1012":
+                subject[0] = "English for Academic Study"
+            elif course_code[0] == "FHMM1014":
+                subject[0] = "Mathematics I"
+            elif course_code[0] == "FHMM1024":
+                subject[0] = "Mathematics II"
+            elif course_code[0] == "FHMM1034":
+                subject[0] = "Mathematics III"
+            elif course_code[0] == "FHSC1124":
+                subject[0] = "Organic Chemistry"
+            elif course_code[0] == "FHSC1114":
+                subject[0] = "Physical Chemistry"
+            elif course_code[0] == "FHSC1014":
+                subject[0] = "Mechanics"
+            elif course_code[0] == "FHSC1024":
+                subject[0] = "Thermodynamics and Electromagnetism"
+            elif course_code[0] == "FHSC1034":
+                subject[0] = "Waves and Modern Physics"
+            elif course_code[0] == "FHSC1134":
+                subject[0] = "Inorganic Chemistry"
+            elif course_code[0] == "FHCT1022":
+                subject[0] = "Programming Concepts"
+            elif course_code[0] == "FHSB1214":
+                subject[0] = "Biology I"
+            elif course_code[0] == "FHSB1224":
+                subject[0] = "Biology II"
+
+        else:
+            valid_course_code[0] = False
+    
+    elif student_stream[0] == "3":
+        if course_code[0] in ("FHHM1022","FHEL1012","FHMM1014","FHMM1024","FHMM1034","FHSC1124","FHSC1114","FHCT1012","FHCT1014","FHCT1024","FHBM1114","FHSC1014","FHSC1024"):
+            valid_course_code[0] = True
+            if course_code[0] == "FHHM1022":
+                subject[0] = "Effective Communication Skills"
+            elif course_code[0] == "FHEL1012":
+                subject[0] = "English for Academic Study"
+            elif course_code[0] == "FHMM1014":
+                subject[0] = "Mathematics I"
+            elif course_code[0] == "FHMM1024":
+                subject[0] = "Mathematics II"
+            elif course_code[0] == "FHMM1034":
+                subject[0] = "Mathematics III"
+            elif course_code[0] == "FHSC1124":
+                subject[0] = "Organic Chemistry"
+            elif course_code[0] == "FHSC1114":
+                subject[0] = "Physical Chemistry"
+            elif course_code[0] == "FHCT1012":
+                subject[0] = "Computing Technology"
+            elif course_code[0] == "FHCT1014":
+                subject[0] = "Introduction to Data Analytics"
+            elif course_code[0] == "FHCT1024":
+                subject[0] = "Programming Concepts and Design"
+            elif course_code[0] == "FHBM1114":
+                subject[0] = "Management"
+            elif course_code[0] == "FHSC1014":
+                subject[0] = "Mechanics"
+            elif course_code[0] == "FHSC1024":
+                subject[0] = "Thermodynamics and Electromagnetism"
+            elif course_code[0] == "FHSB1214":
+                subject[0] = "Biology I"
+        
+        else:
+            valid_course_code[0] = False
+
+    #Arts Stream
+    elif student_stream[0] == "4":
+        if course_code[0] in ("FHEL1024","FHCT1012","FHHM1012","FHHM1022","FHEL1134","FHEL1114","FHBM1114","FHBM1124","FHBM1214","FHBM1224","FHMM1314","FHMM1324","FHBM1024","FHBM1014"):
+            valid_course_code[0] = True
+            if course_code[0] == "FHEL1024":
+                subject[0] = "Academic English"
+            elif course_code[0] == "FHCT1012":
+                subject[0] = "Computing Technology"
+            elif course_code[0] == "FHHM1012":
+                subject[0] = "Critical Thinking"
+            elif course_code[0] == "FHHM1022":
+                subject[0] = "Effective Communication Skills"
+            elif course_code[0] == "FHEL1134":
+                subject[0] = "English for Business Communication"
+            elif course_code[0] == "FHEL1114":
+                subject[0] = "English Language Proficiency"
+            elif course_code[0] == "FHBM1114":
+                subject[0] = "Management"
+            elif course_code[0] == "FHBM1124":
+                subject[0] = "Marketing"
+            elif course_code[0] == "FHBM1214":
+                subject[0] = "Financial Accounting"
+            elif course_code[0] == "FHBM1224":
+                subject[0] = "Financial Management"
+            elif course_code[0] == "FHMM1314":
+                subject[0] = "Mathematics for Business I"
+            elif course_code[0] == "FHMM1324":
+                subject[0] = "Mathematics for Business II"
+            elif course_code[0] == "FHBM1024":
+                subject[0] = "Microeconomics and Macroeconomics"
+            elif course_code[0] == "FHBM1014":
+                subject[0] = "Principles of Economics"
+        
+        else:
+            valid_course_code[0] = False
+
+    elif student_stream[0] == "5":
+        if course_code[0] in ("FHEL1024","FHCT1012","FHHM1012","FHHM1022","FHEL1134","FHEL1114","FHBM1114","FHBM1124","FHHM1134","FHHM1114","FHMM1214"):
+            valid_course_code[0] = True
+            if course_code[0] == "FHEL1024":
+                subject[0] = "Academic English"
+            elif course_code[0] == "FHCT1012":
+                subject[0] = "Computing Technology"
+            elif course_code[0] == "FHHM1012":
+                subject[0] = "Critical Thinking"
+            elif course_code[0] == "FHHM1022":
+                subject[0] = "Effective Communication Skills"
+            elif course_code[0] == "FHEL1134":
+                subject[0] = "English for Business Communication"
+            elif course_code[0] == "FHEL1114":
+                subject[0] = "English Language Proficiency"
+            elif course_code[0] == "FHBM1114":
+                subject[0] = "Management"
+            elif course_code[0] == "FHBM1124":
+                subject[0] = "Marketing"
+            elif course_code[0] == "FHHM1134":
+                subject[0] = "Introduction to Social Psychology"
+            elif course_code[0] == "FHHM1114":
+                subject[0] = "Introduction to Sociology"
+            elif course_code[0] == "FHMM1214":
+                subject[0] = "Mathematics for Social Science"
+                '''
+            elif course_code[0] == "XXXXXXXX":
+                subject[0] = "Introduction to Chinese Literature"
+            elif course_code[0] == "XXXXXXXX":
+                subject[0] = "Introduction to Chinese Writing"
+            elif course_code[0] == "XXXXXXXX":
+                subject[0] = "Selected Texts of Modern Chinese Literature"
+                '''
+        
+        elif course_code[0] == "XXXXXXXX":
+            valid_course_code[0] = False
+            input("\tSorry to say that the following subjects haven't been registered yet ...\n\tIntroduction to Chinese Literature\n\tIntroduction to Chinese Writing\n\tSelected Texts of Modern Chinese Literature\n\tPress ...Enter... to continue ...\n\t")
+        
+        else:
+            valid_course_code[0] = False
+
+    elif student_stream[0] == "6":
+        if course_code[0] in ("FHEL1024","FHCT1012","FHHM1012","FHHM1022","FHEL1134","FHEL1114","FHBM1114","FHBM1124","FHHM1134","FHHM1114","FHMM1214","FHBM1024","FHBM1014","FHHM1124"):
+            valid_course_code[0] = True
+            if course_code[0] == "FHEL1024":
+                subject[0] = "Academic English"
+            elif course_code[0] == "FHCT1012":
+                subject[0] = "Computing Technology"
+            elif course_code[0] == "FHHM1012":
+                subject[0] = "Critical Thinking"
+            elif course_code[0] == "FHHM1022":
+                subject[0] = "Effective Communication Skills"
+            elif course_code[0] == "FHEL1134":
+                subject[0] = "English for Business Communication"
+            elif course_code[0] == "FHEL1114":
+                subject[0] = "English Language Proficiency"
+            elif course_code[0] == "FHBM1114":
+                subject[0] = "Management"
+            elif course_code[0] == "FHBM1124":
+                subject[0] = "Marketing"
+            elif course_code[0] == "FHHM1134":
+                subject[0] = "Introduction to Social Psychology"
+            elif course_code[0] == "FHHM1114":
+                subject[0] = "Introduction to Sociology"
+            elif course_code[0] == "FHMM1214":
+                subject[0] = "Mathematics for Social Science"
+            elif course_code[0] == "FHBM1024":
+                subject[0] = "Microeconomics and Macroeconomics"
+            elif course_code[0] == "FHBM1014":
+                subject[0] = "Principles of Economics"
+            elif course_code[0] == "FHHM1124":
+                subject[0] = "Socialization as a Process "
+
+        else:
+            valid_course_code[0] = False
+
+    elif student_stream[0] == "7":
+        if course_code[0] in ("FHEL1024","FHCT1012","FHHM1012","FHHM1022","FHEL1134","FHEL1114","FHBM1114","FHBM1124","FHAD1024","FHAD1014","FHAD1034","FHHM1134","FHHM1114","FHMM1214"):
+            valid_course_code[0] = True
+            if course_code[0] == "FHEL1024":
+                subject[0] = "Academic English"
+            elif course_code[0] == "FHCT1012":
+                subject[0] = "Computing Technology"
+            elif course_code[0] == "FHHM1012":
+                subject[0] = "Critical Thinking"
+            elif course_code[0] == "FHHM1022":
+                subject[0] = "Effective Communication Skills"
+            elif course_code[0] == "FHEL1134":
+                subject[0] = "English for Business Communication"
+            elif course_code[0] == "FHEL1114":
+                subject[0] = "English Language Proficiency"
+            elif course_code[0] == "FHBM1114":
+                subject[0] = "Management"
+            elif course_code[0] == "FHBM1124":
+                subject[0] = "Marketing"
+            elif course_code[0] == "FHAD1024":
+                subject[0] = "Analytical Drawing"
+            elif course_code[0] == "FHAD1014":
+                subject[0] = "Design Fundamentals"
+            elif course_code[0] == "FHAD1034":
+                subject[0] = "Figure Drawing"
+            elif course_code[0] == "FHHM1134":
+                subject[0] = "Introduction to Social Psychology"
+            elif course_code[0] == "FHHM1114":
+                subject[0] = "Introduction to Sociology"
+            elif course_code[0] == "FHMM1214":
+                subject[0] = "Mathematics for Social Science"
+        
+        else:
+            valid_course_code[0] = False
 
 """[Variables]
 """
@@ -613,7 +776,7 @@ def edit_student_details():
                 loop[14] = True
                 while loop[14]:
                     key_in_student_details()
-                    edit_bool[1] = input("\nAre you really sure you want to edit your STUDENT STREAM ?\nTHIS CANNOT BE UNDONE !! : (y/N) ")
+                    edit_bool[1] = input("\nAre you really sure you want to edit your STUDENT STREAM ?\n"+"-"*72+"NOTE THAT ALL YOUR PREVIOUS ENTERED COURSES RECORD WILL ALL BE RESET !!!"+"-"*72+"\nTHIS CANNOT BE UNDONE !! : (y/N) ")
 
                     if edit_bool[1].upper() not in ("Y","YES","T","TRUE","ON","1","N","NO","F","FALSE","OFF","0"):
                         input("Seems you had entered any else keys ...\nPress ...Enter... to input again ...")
@@ -633,6 +796,7 @@ def edit_student_details():
 
                             data[student_id[0]]['student_stream'] = new_student_stream[0]
                             student_stream[0] = new_student_stream[0]
+                            data[student_id[0]]['courses'] = None
                             key_in_student_details()
                             input("\nYou had successfully changed your Student Stream . . .\nPress ...Enter... to continue ...")
 
