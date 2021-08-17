@@ -3,6 +3,7 @@
 #Modules   : json , os , sys, platform , webbrowser, getpass, distutils.util , strtobool
 #Date      : 10th July 2021 - 1st August 2021 (version 1.0) , 16th - 17th August 2021 for adding some new features (version 1.7)
 #Programmer: Gawr Gura
+#Version   : 1 . 7
 
 """[Modules]
 """
@@ -16,7 +17,7 @@ from distutils.util import strtobool
 
 """[Variables]
 """
-loop = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17"]
+loop = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"]
 
 def clear_screen():
     if platform.uname().system == "Linux":
@@ -676,12 +677,12 @@ def key_in_student_details():
 
             # Else if id not exists in data
             elif student_id[0] not in data.keys():
-                student_name[0] = input("Looks like you're new to here ,\nPlease enter your FULL NAME : ")
+                student_name[0] = input("\nLooks like you're new to here ,\nPlease enter your FULL NAME : ")
                 
                 # Check if student stream entered in the range of 1 - 7
                 loop[2] = True
                 while loop[2]:
-                    student_stream[0] = input("Please enter your chosen stream : (Range Between 1 - 7) ")
+                    student_stream[0] = input("\nPlease enter your chosen stream : (Range Between 1 - 7) ")
                     if student_stream[0] in ("1","2","3","4","5","6","7"):
                         loop[2] = False
                     else:
@@ -748,12 +749,21 @@ def edit_student_details():
                             loop[14] = False
                             loop[17] = True
                             while loop[17]:
-                                try:
-                                    key_in_student_details()
-                                    new_student_id[0] = str(int(input("\nPlease enter your NEW UTAR student ID : ")))
+
+                                loop[18] = True
+                                while loop[18]:
+                                    try:
+                                        key_in_student_details()
+                                        new_student_id[0] = str(int(input("\nPlease enter your NEW UTAR student ID : ")))
+                                        loop[18] = False
+                                    except:
+                                        input("Student ID only accept integers ... Press ...Enter... to reenter ...")
+
+                                if (new_student_id[0] in data.keys()) and (new_student_id[0] != student_id[0]):
+                                    input("Sorry, this student ID is not available!\nPress ...Enter... to reenter ...")
+
+                                else:
                                     loop[17] = False
-                                except:
-                                    input("Student ID only accept integers ... Press ...Enter... to reenter ...")
 
                             data[new_student_id[0]] = data.pop(student_id[0])
                             student_id[0] = new_student_id[0]
