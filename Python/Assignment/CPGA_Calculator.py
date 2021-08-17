@@ -1,7 +1,7 @@
 #Name      : CPGA_Calculator.py 
 #Purpose   : IF EVERYONE HAPPY , THEN I HAPPY
 #Modules   : json , os , sys, platform , webbrowser, getpass, distutils.util , strtobool
-#Date      : 10th July 2021 - 1st August 2021 (version 1.0) , 16th - 17th August 2021 for adding some new features (version 1.5, version 1.6)
+#Date      : 10th July 2021 - 1st August 2021 (version 1.0) , 16th - 17th August 2021 for adding some new features (version 1.7)
 #Programmer: Gawr Gura
 
 """[Modules]
@@ -16,7 +16,7 @@ from distutils.util import strtobool
 
 """[Variables]
 """
-loop = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16"]
+loop = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17"]
 
 def clear_screen():
     if platform.uname().system == "Linux":
@@ -643,10 +643,17 @@ def key_in_student_details():
 
         # If student id haven't entered before ...
         if student_id[0] == 0:
-            clear_screen()
-            print("\t"+"-"*40+"\n\t\tWelcome To CPGA Calculator\n\t\tFor UTAR University\n"+"\t"+"-"*40)
-            student_id[0] = input("Please enter your UTAR student ID : ")
+            loop[17] = True
+            while loop[17]:
+                clear_screen()
+                print("\t"+"-"*40+"\n\t\tWelcome To CPGA Calculator\n\t\tFor UTAR University\n"+"\t"+"-"*40)
 
+                try:
+                    student_id[0] = str(int(input("Please enter your UTAR student ID : ")))
+                    loop[17] = False
+                except:
+                    input("Student ID only accept integers ... Press ...Enter... to reenter ...")
+            
             # If id exists in data
             if student_id[0] in data.keys():
                 student_password[1] = data[student_id[0]]['student_password']
@@ -739,8 +746,15 @@ def edit_student_details():
                         edit_bool[1] = strtobool(edit_bool[1])
                         if edit_bool[1] == True:
                             loop[14] = False
-                            key_in_student_details()
-                            new_student_id[0] = input("\nPlease enter your NEW UTAR student ID : ")
+                            loop[17] = True
+                            while loop[17]:
+                                try:
+                                    key_in_student_details()
+                                    new_student_id[0] = str(int(input("\nPlease enter your NEW UTAR student ID : ")))
+                                    loop[17] = False
+                                except:
+                                    input("Student ID only accept integers ... Press ...Enter... to reenter ...")
+
                             data[new_student_id[0]] = data.pop(student_id[0])
                             student_id[0] = new_student_id[0]
                             key_in_student_details()
@@ -776,7 +790,7 @@ def edit_student_details():
                 loop[14] = True
                 while loop[14]:
                     key_in_student_details()
-                    edit_bool[1] = input("\nAre you really sure you want to edit your STUDENT STREAM ?\n"+"-"*72+"NOTE THAT ALL YOUR PREVIOUS ENTERED COURSES RECORD WILL ALL BE RESET !!!"+"-"*72+"\nTHIS CANNOT BE UNDONE !! : (y/N) ")
+                    edit_bool[1] = input("\nAre you really sure you want to edit your STUDENT STREAM ?\n"+"-"*72+"\nNOTE THAT ALL YOUR PREVIOUS ENTERED COURSES RECORD WILL ALL BE RESET !!!\n"+"-"*72+"\nTHIS CANNOT BE UNDONE !! : (y/N) ")
 
                     if edit_bool[1].upper() not in ("Y","YES","T","TRUE","ON","1","N","NO","F","FALSE","OFF","0"):
                         input("Seems you had entered any else keys ...\nPress ...Enter... to input again ...")
