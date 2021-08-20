@@ -3,7 +3,7 @@
 #Modules   : json , os , sys, platform , webbrowser, getpass, distutils.util , strtobool
 #Date      : 10th July 2021 - 1st August 2021 (version 1.0) , 16th - 20th August 2021 for adding some new features
 #Programmer: Gawr Gura
-#Version   : 1 . 8 . 5
+#Version   : 1 . 8 . 7
 
 """[Modules]
 """
@@ -502,8 +502,8 @@ def key_in_courses():
         print("\n")
         calculate_CPGA()
         print("\n")
-        course_code[0] = input("Please enter your course code : (Enter 'X' to exit to menu) ")
-        if course_code[0].upper() == "X":
+        course_code[0] = (input("Please enter your course code : (Enter 'X' to exit to menu) ")).upper()
+        if course_code[0] == "X":
             loop[3] = False
 
         else:
@@ -511,10 +511,10 @@ def key_in_courses():
             if valid_course_code[0] == True:
 
                 if data[student_id[0]]['courses'] == None:
-                        loop[7] == True
+                        loop[7] = True
                         while loop[7]:
-                            mark[0] = input("Please enter your mark : (Enter 'X' to cancel) ")
-                            if mark[0].upper() == "X":
+                            mark[0] = (input("Please enter your mark : (Enter 'X' to cancel) ")).upper()
+                            if mark[0] == "X":
                                 loop[7] = False
 
                             else:
@@ -562,8 +562,8 @@ def key_in_courses():
                                     print("\n")
                                     calculate_CPGA()
                                     print("\n")
-                                    course_code[0] = input("Please enter your new course code replacement for %s :\n(Enter 'X' to cancel) "%course_code[1])
-                                    if course_code[0].upper() == "X":
+                                    course_code[0] = (input("Please enter your new course code replacement for %s :\n(Enter 'X' to cancel) "%course_code[1])).upper()
+                                    if course_code[0] == "X":
                                         loop[4] = False
 
                                     elif (course_code[0] == course_code[1]) or (course_code[0] not in data[student_id[0]]['courses'].keys()):
@@ -571,8 +571,8 @@ def key_in_courses():
                                         if valid_course_code[0] == True:
                                             loop[5] = True
                                             while loop[5]:
-                                                mark[0] = input("Please enter your mark replacement for %s :\n(Enter 'X' to cancel) "%course_code[1])
-                                                if mark[0].upper() == "X":
+                                                mark[0] = (input("Please enter your mark replacement for %s :\n(Enter 'X' to cancel) "%course_code[1])).upper()
+                                                if mark[0] == "X":
                                                     loop[4] = False
                                                     loop[5] = False
 
@@ -607,8 +607,8 @@ def key_in_courses():
                     elif course_code[0] not in data[student_id[0]]['courses'].keys():
                         loop[6] = True
                         while loop[6]:
-                            mark[0] = input("Please enter your mark : (Enter 'X' to cancel) ")
-                            if mark[0].upper() == "X":
+                            mark[0] = (input("Please enter your mark : (Enter 'X' to cancel) ")).upper()
+                            if mark[0] == "X":
                                 loop[6] = False
 
                             else:
