@@ -1,9 +1,9 @@
 #Name      : CPGA_Calculator.py 
 #Purpose   : IF EVERYONE HAPPY , THEN I HAPPY
 #Modules   : json , os , sys, platform , webbrowser, getpass, distutils.util , strtobool
-#Date      : 10th July 2021 - 1st August 2021 (version 1.0) , 16th - 17th August 2021 for adding some new features
+#Date      : 10th July 2021 - 1st August 2021 (version 1.0) , 16th - 20th August 2021 for adding some new features
 #Programmer: Gawr Gura
-#Version   : 1 . 8
+#Version   : 1 . 8 . 5
 
 """[Modules]
 """
@@ -58,6 +58,15 @@ def print_courses():
             data[student_id[0]]['courses'][courses]['point'],"    ",
             data[student_id[0]]['courses'][courses]['subject'])
 
+def print_all_streams():
+    print("\n\t"+"-"*29+"\n\tStream 1 : Biological Science\n\t"+"-"*29+"\n\tFHHM1022 Effective Communication Skills\n\tFHEL1012 English for Academic Study\n\tFHMM1014 Mathematics I\n\tFHMM1024 Mathematics II\n\tFHMM1034 Mathematics III\n\tFHSC1124 Organic Chemistry\n\tFHSC1114 Physical Chemistry\n\tFHSC1214 Fundamentals of Cell Biology\n\tFHSC1134 Inorganic Chemistry\n\tFHSC1224 Introduction to Physiological Systems\n\tFHSC1234 Modern Biology\n\tFHSP1014 Physics I\n\tFHSP1024 Physics II\n\tFHCT1022 Programming Concepts\n")
+    print("\n\t"+"-"*49+"\n\tStream 2 : Physical Science (Engineering Science)\n\t"+"-"*49+"\n\tFHHM1022 Effective Communication Skills\n\tFHEL1012 English for Academic Study\n\tFHMM1014 Mathematics I\n\tFHMM1024 Mathematics II\n\tFHMM1034 Mathematics III\n\tFHSC1124 Organic Chemistry\n\tFHSC1114 Physical Chemistry\n\tFHSC1014 Mechanics\n\tFHSC1024 Thermodynamics and Electromagnetism\n\tFHSC1034 Waves and Modern Physics\n\tFHSC1134 Inorganic Chemistry\n\tFHCT1022 Programming Concepts\n\tFHSB1214 Biology I\n\tFHSB1224 Biology II\n")
+    print("\n\t"+"-"*51+"\n\tStream 3 : Physical Science (Technological Science)\n\t"+"-"*51+"\n\tFHHM1022 Effective Communication Skills\n\tFHEL1012 English for Academic Study\n\tFHMM1014 Mathematics I\n\tFHMM1024 Mathematics II\n\tFHMM1034 Mathematics III\n\tFHSC1124 Organic Chemistry\n\tFHSC1114 Physical Chemistry\n\tFHCT1012 Computing Technology\n\tFHCT1014 Introduction to Data Analytics\n\tFHCT1024 Programming Concepts and Design\n\tFHBM1114 Management\n\tFHSC1014 Mechanics\n\tFHSC1024 Thermodynamics and Electromagnetism\n\tFHSB1214 Biology I\n")
+    print("\n\t"+"-"*37+"\n\tStream 4 : Accountancy and Management\n\t"+"-"*37+"\n\tFHEL1024 Academic English\n\tFHCT1012 Computing Technology\n\tFHHM1012 Critical Thinking\n\tFHHM1022 Effective Communication Skills\n\tFHEL1134 English for Business Communication\n\tFHEL1114 English Language Proficiency\n\tFHBM1114 Management\n\tFHBM1124 Marketing\n\tFHBM1214 Financial Accounting\n\tFHBM1224 Financial Management\n\tFHMM1314 Mathematics for Business I\n\tFHMM1324 Mathematics for Business II\n\tFHBM1024 Microeconomics and Macroeconomics\n\tFHBM1014 Principles of Economics\n")
+    print("\n\t"+"-"*52+"\n\tStream 5 : Arts and Social Science (Chinese Studies)\n\t"+"-"*52+"\n\tFHEL1024 Academic English\n\tFHCT1012 Computing Technology\n\tFHHM1012 Critical Thinking\n\tFHHM1022 Effective Communication Skills\n\tFHEL1134 English for Business Communication\n\tFHEL1114 English Language Proficiency\n\tFHBM1114 Management\n\tFHBM1124 Marketing\n\tFHHM1134 Introduction to Social Psychology\n\tFHHM1114 Introduction to Sociology\n\tFHMM1214 Mathematics for Social Science\n\tXXXXXXXX Introduction to Chinese Literature\n\tXXXXXXXX Introduction to Chinese Writing\n\tXXXXXXXX Selected Texts of Modern Chinese Literature\n")
+    print("\n\t"+"-"*51+"\n\tStream 6 : Arts and Social Science (Social Science)\n\t"+"-"*51+"\n\tFHEL1024 Academic English\n\tFHCT1012 Computing Technology\n\tFHHM1012 Critical Thinking\n\tFHHM1022 Effective Communication Skills\n\tFHEL1134 English for Business Communication\n\tFHEL1114 English Language Proficiency\n\tFHBM1114 Management\n\tFHBM1124 Marketing\n\tFHHM1134 Introduction to Social Psychology\n\tFHHM1114 Introduction to Sociology\n\tFHMM1214 Mathematics for Social Science\n\tFHBM1024 Microeconomics and Macroeconomics\n\tFHBM1014 Principles of Economics\n\tFHHM1124 Socialization as a Process\n")
+    print("\n\t"+"-"*96+"\n\tStream 7 : Arts and Social Science (Graphic Design and Multimedia, Game Design and Architecture)\n\t"+"-"*96+"\n\tFHEL1024 Academic English\n\tFHCT1012 Computing Technology\n\tFHHM1012 Critical Thinking\n\tFHHM1022 Effective Communication Skills\n\tFHEL1134 English for Business Communication\n\tFHEL1114 English Language Proficiency\n\tFHBM1114 Management\n\tFHBM1124 Marketing\n\tFHAD1024 Analytical Drawing\n\tFHAD1014 Design Fundamentals\n\tFHAD1034 Figure Drawing\n\tFHHM1134 Introduction to Social Psychology\n\tFHHM1114 Introduction to Sociology\n\tFHMM1214 Mathematics for Social Science\n")
+
 def print_all():
     loop[16] = True
     while loop[16]:
@@ -77,15 +86,8 @@ def print_all():
 
             elif options[2] == "1":
                 key_in_student_details()
-                print("\n\t"+"-"*29+"\n\tStream 1 : Biological Science\n\t"+"-"*29+"\n\tFHHM1022 Effective Communication Skills\n\tFHEL1012 English for Academic Study\n\tFHMM1014 Mathematics I\n\tFHMM1024 Mathematics II\n\tFHMM1034 Mathematics III\n\tFHSC1124 Organic Chemistry\n\tFHSC1114 Physical Chemistry\n\tFHSC1214 Fundamentals of Cell Biology\n\tFHSC1134 Inorganic Chemistry\n\tFHSC1224 Introduction to Physiological Systems\n\tFHSC1234 Modern Biology\n\tFHSP1014 Physics I\n\tFHSP1024 Physics II\n\tFHCT1022 Programming Concepts\n")
-                print("\n\t"+"-"*49+"\n\tStream 2 : Physical Science (Engineering Science)\n\t"+"-"*49+"\n\tFHHM1022 Effective Communication Skills\n\tFHEL1012 English for Academic Study\n\tFHMM1014 Mathematics I\n\tFHMM1024 Mathematics II\n\tFHMM1034 Mathematics III\n\tFHSC1124 Organic Chemistry\n\tFHSC1114 Physical Chemistry\n\tFHSC1014 Mechanics\n\tFHSC1024 Thermodynamics and Electromagnetism\n\tFHSC1034 Waves and Modern Physics\n\tFHSC1134 Inorganic Chemistry\n\tFHCT1022 Programming Concepts\n\tFHSB1214 Biology I\n\tFHSB1224 Biology II\n")
-                print("\n\t"+"-"*51+"\n\tStream 3 : Physical Science (Technological Science)\n\t"+"-"*51+"\n\tFHHM1022 Effective Communication Skills\n\tFHEL1012 English for Academic Study\n\tFHMM1014 Mathematics I\n\tFHMM1024 Mathematics II\n\tFHMM1034 Mathematics III\n\tFHSC1124 Organic Chemistry\n\tFHSC1114 Physical Chemistry\n\tFHCT1012 Computing Technology\n\tFHCT1014 Introduction to Data Analytics\n\tFHCT1024 Programming Concepts and Design\n\tFHBM1114 Management\n\tFHSC1014 Mechanics\n\tFHSC1024 Thermodynamics and Electromagnetism\n\tFHSB1214 Biology I\n")
-                print("\n\t"+"-"*37+"\n\tStream 4 : Accountancy and Management\n\t"+"-"*37+"\n\tFHEL1024 Academic English\n\tFHCT1012 Computing Technology\n\tFHHM1012 Critical Thinking\n\tFHHM1022 Effective Communication Skills\n\tFHEL1134 English for Business Communication\n\tFHEL1114 English Language Proficiency\n\tFHBM1114 Management\n\tFHBM1124 Marketing\n\tFHBM1214 Financial Accounting\n\tFHBM1224 Financial Management\n\tFHMM1314 Mathematics for Business I\n\tFHMM1324 Mathematics for Business II\n\tFHBM1024 Microeconomics and Macroeconomics\n\tFHBM1014 Principles of Economics\n")
-                print("\n\t"+"-"*52+"\n\tStream 5 : Arts and Social Science (Chinese Studies)\n\t"+"-"*52+"\n\tFHEL1024 Academic English\n\tFHCT1012 Computing Technology\n\tFHHM1012 Critical Thinking\n\tFHHM1022 Effective Communication Skills\n\tFHEL1134 English for Business Communication\n\tFHEL1114 English Language Proficiency\n\tFHBM1114 Management\n\tFHBM1124 Marketing\n\tFHHM1134 Introduction to Social Psychology\n\tFHHM1114 Introduction to Sociology\n\tFHMM1214 Mathematics for Social Science\n\tXXXXXXXX Introduction to Chinese Literature\n\tXXXXXXXX Introduction to Chinese Writing\n\tXXXXXXXX Selected Texts of Modern Chinese Literature\n")
-                print("\n\t"+"-"*51+"\n\tStream 6 : Arts and Social Science (Social Science)\n\t"+"-"*51+"\n\tFHEL1024 Academic English\n\tFHCT1012 Computing Technology\n\tFHHM1012 Critical Thinking\n\tFHHM1022 Effective Communication Skills\n\tFHEL1134 English for Business Communication\n\tFHEL1114 English Language Proficiency\n\tFHBM1114 Management\n\tFHBM1124 Marketing\n\tFHHM1134 Introduction to Social Psychology\n\tFHHM1114 Introduction to Sociology\n\tFHMM1214 Mathematics for Social Science\n\tFHBM1024 Microeconomics and Macroeconomics\n\tFHBM1014 Principles of Economics\n\tFHHM1124 Socialization as a Process\n")
-                print("\n\t"+"-"*96+"\n\tStream 7 : Arts and Social Science (Graphic Design and Multimedia, Game Design and Architecture)\n\t"+"-"*96+"\n\tFHEL1024 Academic English\n\tFHCT1012 Computing Technology\n\tFHHM1012 Critical Thinking\n\tFHHM1022 Effective Communication Skills\n\tFHEL1134 English for Business Communication\n\tFHEL1114 English Language Proficiency\n\tFHBM1114 Management\n\tFHBM1124 Marketing\n\tFHAD1024 Analytical Drawing\n\tFHAD1014 Design Fundamentals\n\tFHAD1034 Figure Drawing\n\tFHHM1134 Introduction to Social Psychology\n\tFHHM1114 Introduction to Sociology\n\tFHMM1214 Mathematics for Social Science\n")
-                
-                input("Press ...Enter... to return to menu ...")
+                print_all_streams()
+                input("Press 'Enter' to return to menu ...")
 
             elif options[2] == "2":
                 key_in_student_details()
@@ -137,7 +139,7 @@ def print_all():
                     "\tFHAD1014 Design Fundamentals\n",
                     "\tFHAD1034 Figure Drawing\n")
                 
-                input("Press ...Enter... to return to menu ...")
+                input("Press 'Enter' to return to menu ...")
 
             elif options[2] == "3":
                 key_in_student_details()
@@ -155,10 +157,10 @@ def print_all():
                     "\t C    | 2.00\n",
                     "\t F    | 0.00\n")
 
-                input("Press ...Enter... to return to menu ...")
+                input("Press 'Enter' to return to menu ...")
 
         else:
-            input("Invalid options ... Reinput again ...\nPress ...Enter... to continue")
+            input("Invalid options ... Reinput again ...\nPress 'Enter' to continue")
 
 """[Variables]
 """
@@ -364,7 +366,7 @@ def validation_course_code():
         
         elif course_code[0] == "XXXXXXXX":
             valid_course_code[0] = False
-            input("\tSorry to say that the following subjects haven't been registered yet ...\n\tIntroduction to Chinese Literature\n\tIntroduction to Chinese Writing\n\tSelected Texts of Modern Chinese Literature\n\tPress ...Enter... to continue ...\n\t")
+            input("\n\tSorry to say that the following subjects haven't been registered yet :\n\tIntroduction to Chinese Literature\n\tIntroduction to Chinese Writing\n\tSelected Texts of Modern Chinese Literature\n")
         
         else:
             valid_course_code[0] = False
@@ -532,13 +534,13 @@ def key_in_courses():
                                         'gp_course_hour': gp_course_hour[0]}}
 
                                 else: # valid_mark[0] == False
-                                    input("The range of marks only between 0 - 100 , \nPress ...Enter... to continue ...")
+                                    input("The range of marks only between 0 - 100 , \nPress 'Enter' to continue ...")
 
                 else:
                     if course_code[0] in data[student_id[0]]['courses'].keys():
                         edit_bool[0] = input("The course code you just entered already exists !!!\nDo you want to edit its value ? : (y/N) ")
                         if edit_bool[0].upper() not in ("Y","YES","T","TRUE","ON","1","N","NO","F","FALSE","OFF","0"):
-                            input("Seems you had entered any else keys, by default we cancelled your replacement method ...\nPress ...Enter... to continue ...")
+                            input("Seems you had entered any else keys, by default we cancelled your replacement method ...\nPress 'Enter' to continue ...")
                         elif edit_bool[0].upper() in ("Y","YES","T","TRUE","ON","1","N","NO","F","FALSE","OFF","0"):
                             edit_bool[0] = strtobool(edit_bool[0])
                             if edit_bool[0] == True:
@@ -594,13 +596,13 @@ def key_in_courses():
                                                             'gp_course_hour': gp_course_hour[0]}
 
                                                     else: # valid_mark[0] == False
-                                                        input("The range of marks only between 0 - 100 , \nPress ...Enter... to continue ...")
+                                                        input("The range of marks only between 0 - 100 , \nPress 'Enter' to continue ...")
 
                                         else: # valid_course_code[0] == False
-                                            input("Invalid Course Code ... Please enter again ...\nPress ...Enter... to continue ...")
+                                            input("Invalid Course Code ... Please enter again ...\nPress 'Enter' to continue ...")
 
                                     elif course_code[0] in data[student_id[0]]['courses'].keys():
-                                        input("You have enter a same subject twice ...\nPress ...Enter... to enter course code again ...")
+                                        input("You have enter a same subject twice ...\nPress 'Enter' to enter course code again ...")
 
                     elif course_code[0] not in data[student_id[0]]['courses'].keys():
                         loop[6] = True
@@ -626,10 +628,10 @@ def key_in_courses():
                                         'gp_course_hour': gp_course_hour[0]}
 
                                 else: # valid_mark[0] == False
-                                    input("The range of marks only between 0 - 100 , \nPress ...Enter... to continue ...")
+                                    input("The range of marks only between 0 - 100 , \nPress 'Enter' to continue ...")
 
             else: # valid_course_code[0] == False
-                input("Invalid Course Code ... Please enter again ...\nPress ...Enter... to continue ...")
+                input("Invalid Course Code ... Please enter again ...\nPress 'Enter' to continue ...")
 
 """[Variables]
 """    
@@ -653,7 +655,7 @@ def key_in_student_details():
                     student_id[0] = str(int(input("Please enter your UTAR student ID : ")))
                     loop[17] = False
                 except:
-                    input("Student ID only accept integers ... Press ...Enter... to reenter ...")
+                    input("Student ID only accept integers ... Press 'Enter' to reenter ...")
             
             # If id exists in data
             if student_id[0] in data.keys():
@@ -666,7 +668,7 @@ def key_in_student_details():
                 elif student_password[1] != None:
                     loop[8] = True
                     while loop[8]:
-                        student_password[0] = getpass("Please enter your password : ")
+                        student_password[0] = getpass("\nPlease enter your password : ")
                         if student_password[0] == student_password[1]:
                             loop[8] = False
                             student_name[0] = data[student_id[0]]['student_name']
@@ -682,9 +684,17 @@ def key_in_student_details():
                 # Check if student stream entered in the range of 1 - 7
                 loop[2] = True
                 while loop[2]:
-                    student_stream[0] = input("\nPlease enter your chosen stream : (Range Between 1 - 7) ")
-                    if student_stream[0] in ("1","2","3","4","5","6","7"):
-                        loop[2] = False
+                    student_stream[0] = input("\nPlease enter your chosen stream : (Range Between 1 - 7)(Press 'R' for looking streams list) ")
+                    if student_stream[0].upper() in ("1","2","3","4","5","6","7","R"):
+                        if student_stream[0].upper() == "R":
+                            print_all_streams()
+                            input("Press 'Enter' to continue ...")
+                            clear_screen()
+                            print("\t"+"-"*40+"\n\t\tWelcome To CPGA Calculator\n\t\tFor UTAR University\n"+"\t"+"-"*40)
+                            print("\tYou're now registering new student as %s"%student_name[0])
+                            print("\t\tID : %s"%student_id[0])
+                        else:
+                            loop[2] = False
                     else:
                         input("Invalid stream ... Reinput again ...\nPress Enter to continue ...")
                         clear_screen()
@@ -741,7 +751,7 @@ def edit_student_details():
                     edit_bool[1] = input("\nAre you really sure you want to edit your STUDENT ID ?\nTHIS CANNOT BE UNDONE !! : (y/N) ")
 
                     if edit_bool[1].upper() not in ("Y","YES","T","TRUE","ON","1","N","NO","F","FALSE","OFF","0"):
-                        input("Seems you had entered any else keys ...\nPress ...Enter... to input again ...")
+                        input("Seems you had entered any else keys ...\nPress 'Enter' to input again ...")
 
                     elif edit_bool[1].upper() in ("Y","YES","T","TRUE","ON","1","N","NO","F","FALSE","OFF","0"):
                         edit_bool[1] = strtobool(edit_bool[1])
@@ -757,10 +767,10 @@ def edit_student_details():
                                         new_student_id[0] = str(int(input("\nPlease enter your NEW UTAR student ID : ")))
                                         loop[18] = False
                                     except:
-                                        input("Student ID only accept integers ... Press ...Enter... to reenter ...")
+                                        input("Student ID only accept integers ... Press 'Enter' to reenter ...")
 
                                 if (new_student_id[0] in data.keys()) and (new_student_id[0] != student_id[0]):
-                                    input("Sorry, this student ID is not available!\nPress ...Enter... to reenter ...")
+                                    input("Sorry, this student ID is not available!\nPress 'Enter' to reenter ...")
 
                                 else:
                                     loop[17] = False
@@ -768,7 +778,7 @@ def edit_student_details():
                             data[new_student_id[0]] = data.pop(student_id[0])
                             student_id[0] = new_student_id[0]
                             key_in_student_details()
-                            input("\nYou had successfully changed your Student ID . . .\nPress ...Enter... to continue ...")
+                            input("\nYou had successfully changed your Student ID . . .\nPress 'Enter' to continue ...")
 
                         elif edit_bool[1] == False:
                             loop[14] = False
@@ -780,7 +790,7 @@ def edit_student_details():
                     edit_bool[1] = input("\nAre you really sure you want to edit your STUDENT NAME ?\nTHIS CANNOT BE UNDONE !! : (y/N) ")
 
                     if edit_bool[1].upper() not in ("Y","YES","T","TRUE","ON","1","N","NO","F","FALSE","OFF","0"):
-                        input("Seems you had entered any else keys ...\nPress ...Enter... to input again ...")
+                        input("Seems you had entered any else keys ...\nPress 'Enter' to input again ...")
 
                     elif edit_bool[1].upper() in ("Y","YES","T","TRUE","ON","1","N","NO","F","FALSE","OFF","0"):
                         edit_bool[1] = strtobool(edit_bool[1])
@@ -791,7 +801,7 @@ def edit_student_details():
                             data[student_id[0]]['student_name'] = new_student_name[0]
                             student_name[0] = new_student_name[0]
                             key_in_student_details()
-                            input("\nYou had successfully changed your Student Name . . .\nPress ...Enter... to continue ...")
+                            input("\nYou had successfully changed your Student Name . . .\nPress 'Enter' to continue ...")
 
                         elif edit_bool[1] == False:
                             loop[14] = False
@@ -803,7 +813,7 @@ def edit_student_details():
                     edit_bool[1] = input("\nAre you really sure you want to edit your STUDENT STREAM ?\n"+"-"*72+"\nNOTE THAT ALL YOUR PREVIOUS ENTERED COURSES RECORD WILL ALL BE RESET !!!\n"+"-"*72+"\nTHIS CANNOT BE UNDONE !! : (y/N) ")
 
                     if edit_bool[1].upper() not in ("Y","YES","T","TRUE","ON","1","N","NO","F","FALSE","OFF","0"):
-                        input("Seems you had entered any else keys ...\nPress ...Enter... to input again ...")
+                        input("Seems you had entered any else keys ...\nPress 'Enter' to input again ...")
 
                     elif edit_bool[1].upper() in ("Y","YES","T","TRUE","ON","1","N","NO","F","FALSE","OFF","0"):
                         edit_bool[1] = strtobool(edit_bool[1])
@@ -812,9 +822,13 @@ def edit_student_details():
                             loop[15] = True
                             while loop[15]:
                                 key_in_student_details()
-                                new_student_stream[0] = input("\nPlease enter your NEW UTAR student stream : (Range Between 1 - 7) ")
-                                if new_student_stream[0] in ("1","2","3","4","5","6","7"):
-                                    loop[15] = False
+                                new_student_stream[0] = input("\nPlease enter your NEW UTAR student stream : (Range Between 1 - 7)(Press 'R' for looking streams list) ")
+                                if new_student_stream[0].upper() in ("1","2","3","4","5","6","7","R"):
+                                    if new_student_stream[0].upper() == "R":
+                                        print_all_streams()
+                                        input("Press 'Enter' to continue ...")
+                                    else:
+                                        loop[15] = False
                                 else:
                                     input("Invalid stream ... Reinput again ...\nPress Enter to continue ...")
 
@@ -822,7 +836,7 @@ def edit_student_details():
                             student_stream[0] = new_student_stream[0]
                             data[student_id[0]]['courses'] = None
                             key_in_student_details()
-                            input("\nYou had successfully changed your Student Stream . . .\nPress ...Enter... to continue ...")
+                            input("\nYou had successfully changed your Student Stream . . .\nPress 'Enter' to continue ...")
 
                         elif edit_bool[1] == False:
                             loop[14] = False
@@ -832,25 +846,25 @@ def edit_student_details():
                 if student_password[1] != None:
                     loop[9] = True
                     while loop[9]:
-                        student_password[0] = getpass("\nPlease enter your previous password : ")
+                        student_password[0] = getpass("\n\nPlease enter your previous password : ")
                         if student_password[0] == student_password[1]:
                             loop[9] = False
                             loop[10] = True
                             while loop[10]:
-                                student_password[0] = getpass("\nPlease enter your new password : ")
-                                student_password[2] = getpass("\nPlease reenter your new password : ")
+                                student_password[0] = getpass("\n\nPlease enter your new password : ")
+                                student_password[2] = getpass("\n\nPlease reenter your new password : ")
                                 if student_password[2] == student_password[0]:
                                     loop[10] = False
                                     student_password[1] = student_password[2]
                                     data[student_id[0]]['student_password'] = student_password[1]
-                                    input("Your password has been successfully changed\nPress ...Enter... to continue ...")
+                                    input("Your password has been successfully changed\nPress 'Enter' to continue ...")
 
                                 else:
-                                    print("The password you just entered was incorrect ! ...\nPress ...Enter... to continue ...")
+                                    input("The password you just entered was incorrect ! ...\nPress 'Enter' to continue ...")
                                     key_in_student_details()
                         
                         else:
-                            input("Incorrect password, Please enter again ...\nPress ...Enter... to continue ...")
+                            input("Incorrect password, Please enter again ...\nPress 'Enter' to continue ...")
                             key_in_student_details()
                 
                 elif student_password[1] == None:
@@ -862,19 +876,19 @@ def edit_student_details():
                             loop[11] = False
                             student_password[1] = student_password[2]
                             data[student_id[0]]['student_password'] = student_password[1]
-                            input("Your password has been successfully changed\nPress ...Enter... to continue ...")
+                            input("Your password has been successfully changed\nPress 'Enter' to continue ...")
 
                         else:
-                            input("The password you just entered was incorrect ! ...\nPress ...Enter... to continue ...")
+                            input("The password you just entered was incorrect ! ...\nPress 'Enter' to continue ...")
                             key_in_student_details()
 
         else:
-            input("Invalid options ... Reinput again ...\nPress ...Enter... to continue")
+            input("Invalid options ... Reinput again ...\nPress 'Enter' to continue")
 
 def export_student_data():
     with open (os.path.join(sys.path[0], 'data.json'), 'w', encoding ='utf8') as final_data:
         json.dump(data, final_data, indent = 4, ensure_ascii = True)
-    final_data.close()
+    #final_data.close()
 
 """[SCRIPT START HERE]
 """
@@ -885,16 +899,16 @@ while loop[12]:
         with open (os.path.join(sys.path[0], 'data.json'), 'r') as initial_data:
             if os.stat(os.path.join(sys.path[0], 'data.json')).st_size != 0:
                 data = json.loads(initial_data.read())
-                initial_data.close()
                 loop[12] = False
             else:
                 data = {}
-                initial_data.close()
                 loop[12] = False
 
     except FileNotFoundError:
         with open (os.path.join(sys.path[0], 'data.json'), 'w+') as empty:
-            empty.close()
+            pass
+    except:
+        input("Data file corrupted...\nPlease contact your administrator...\nPress 'Enter' to continue ...")
 
 loop[0] = True
 while loop[0]:
@@ -921,21 +935,21 @@ while loop[0]:
                 key_in_courses()
                 export_student_data()
             except:
-                input("Error occured ...\nPress ...Enter... back to menu ...")
+                input("Error occured ...\nPress 'Enter' back to menu ...")
 
         elif options[0] == "2":
             try:
                 edit_student_details()
                 export_student_data()
             except:
-                input("Error occured ...\nPress ...Enter... back to menu ...")
+                input("Error occured ...\nPress 'Enter' back to menu ...")
 
         elif options[0] == "3":
             try:
                 print_all()
                 export_student_data()
             except:
-                input("Error occured ...\nPress ...Enter... back to menu ...")
+                input("Error occured ...\nPress 'Enter' back to menu ...")
 
         elif options[0] == "4":
             try:
@@ -945,7 +959,7 @@ while loop[0]:
                     webbrowser.BackgroundBrowser("C://Program Files (x86)//Google//Chrome//Application//chrome.exe"))
                 webbrowser.get('chrome').open(url)
             except:
-                input("Error occured ...\nPress ...Enter... back to menu ...")
+                pass
 
     else:
-        input("Invalid options ... Reinput again ...\nPress ...Enter... to continue")
+        input("Invalid options ... Reinput again ...\nPress 'Enter' to continue")
