@@ -1,9 +1,9 @@
 #Name      : CPGA_Calculator.py 
 #Purpose   : IF EVERYONE HAPPY , THEN I HAPPY
-#Modules   : json , os , sys, platform , webbrowser, getpass, distutils.util , strtobool
-#Date      : 10th July 2021 - 1st August 2021 (version 1.0) , 16th - 22nd August 2021 for adding some new features
+#Modules   : json , os , sys, platform , webbrowser, datetime, getpass, distutils.util , strtobool
+#Date      : 10th July 2021 - 1st August 2021 (version 1.0) , 16th - 24th August 2021 for adding some new features
 #Programmer: Gawr Gura
-#Version   : 1 . 8 . 8
+#Version   : 1 . 9 . 0
 
 """[Modules]
 """
@@ -12,6 +12,7 @@ import platform
 import os
 import sys
 import webbrowser
+from datetime import datetime
 from getpass import getpass
 from distutils.util import strtobool
 
@@ -649,7 +650,7 @@ def key_in_student_details():
             loop[17] = True
             while loop[17]:
                 clear_screen()
-                print("\t"+"-"*40+"\n\t\tWelcome To CPGA Calculator\n\t\tFor UTAR University\n"+"\t"+"-"*40)
+                print("\t"+"-"*40+"\n\t\tWelcome To CPGA Calculator\n\t\tFor UTAR University\n\t\t"+ datetime.now().strftime("%d/%m/%Y %H:%M:%S")+ "\n"+"\t"+"-"*40)
 
                 try:
                     student_id[0] = str(int(input("Please enter your UTAR student ID : ")))
@@ -690,7 +691,7 @@ def key_in_student_details():
                             print_all_streams()
                             input("Press 'Enter' to continue ...")
                             clear_screen()
-                            print("\t"+"-"*40+"\n\t\tWelcome To CPGA Calculator\n\t\tFor UTAR University\n"+"\t"+"-"*40)
+                            print("\t"+"-"*40+"\n\t\tWelcome To CPGA Calculator\n\t\tFor UTAR University\n\t\t"+ datetime.now().strftime("%d/%m/%Y %H:%M:%S")+ "\n"+"\t"+"-"*40)
                             print("\tYou're now registering new student as %s"%student_name[0])
                             print("\t\tID : %s"%student_id[0])
                         else:
@@ -698,7 +699,7 @@ def key_in_student_details():
                     else:
                         input("Invalid stream ... Reinput again ...\nPress Enter to continue ...")
                         clear_screen()
-                        print("\t"+"-"*40+"\n\t\tWelcome To CPGA Calculator\n\t\tFor UTAR University\n"+"\t"+"-"*40)
+                        print("\t"+"-"*40+"\n\t\tWelcome To CPGA Calculator\n\t\tFor UTAR University\n\t\t"+ datetime.now().strftime("%d/%m/%Y %H:%M:%S")+ "\n"+"\t"+"-"*40)
                         print("\tYou're now registering new student as %s"%student_name[0])
                         print("\t\tID : %s"%student_id[0])
                 
@@ -714,7 +715,7 @@ def key_in_student_details():
         else:
             loop[1] = False
             clear_screen()
-            print("\t"+"-"*40+"\n\t\tWelcome To CPGA Calculator\n\t\tFor UTAR University\n"+"\t"+"-"*40)
+            print("\t"+"-"*40+"\n\t\tWelcome To CPGA Calculator\n\t\tFor UTAR University\n\t\t"+ datetime.now().strftime("%d/%m/%Y %H:%M:%S")+ "\n"+"\t"+"-"*40)
             print("\t    You're now logged in as %s"%data[student_id[0]]['student_name'])
             print("\t\tID : %s"%student_id[0])
 
